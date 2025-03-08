@@ -5,8 +5,7 @@ import { PlayerContext } from '../context/PlayerContext'
 
 const Player = () => {
 
-    const { seekBar, prev, seekBg, next, playStatus, track, play, pause, time, volume, changeVolume } = useContext(PlayerContext);
-
+    const { seekTime, changeSeek, prev, next, playStatus, track, play, pause, time, volume, changeVolume } = useContext(PlayerContext);
     return (
         <PlayerContainer className='text-light'>
             <div className='d-flex'>
@@ -32,11 +31,15 @@ const Player = () => {
                         {time.currentTime.minute < 10 ? "0" + time.currentTime.minute : time.currentTime.minute}
                         :
                         {time.currentTime.second < 10 ? "0" + time.currentTime.second : time.currentTime.second}</p>
-                    <div ref={seekBg} className='line'>
-                        <div ref={seekBar} className='loader'>
+                    <input
+                        type="range"
+                        min="0"
+                        max="100"
+                        value={seekTime}
+                        onChange={changeSeek}
+                    />
 
-                        </div>
-                    </div>
+
                     <p>{time.totalTime.minute}:{time.totalTime.second < 10 ? "0" + time.totalTime.second : time.totalTime.second}</p>
                 </div>
 
