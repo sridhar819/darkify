@@ -26,6 +26,7 @@ const PlayerContextProvider = (props) => {
     useEffect(() => {
         audioRef.current.ontimeupdate = () => {
             if (audioRef.current.duration) {
+
                 const progress = (audioRef.current.currentTime / audioRef.current.duration) * 100;
                 setSeekTime(progress);
                 setTime({
@@ -53,12 +54,13 @@ const PlayerContextProvider = (props) => {
         setPlayStatus(false);
     };
 
-   
-    const playWithId = (id) => {
-        setTrack(songsData[id]);
+
+    const playWithId = async (id) => {
+        await setTrack(songsData[id]);
+        await setPlayStatus(true)
     };
 
-    
+
     const prev = () => {
         const currentIndex = songsData.findIndex((song) => song === track);
         const prevIndex = (currentIndex - 1 + songsData.length) % songsData.length;
