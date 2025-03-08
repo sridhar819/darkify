@@ -16,6 +16,7 @@ const PlayerContextProvider = (props) => {
         totalTime: { second: 0, minute: 0 },
     });
 
+
     const changeSeek = (e) => {
         const newTime = (e.target.value / 100) * audioRef.current.duration;
         audioRef.current.currentTime = newTime;

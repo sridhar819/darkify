@@ -118,19 +118,38 @@ const PlayPause = styled.div`
         font-size: 13px;
     }
 
-    .line{
-        background-color: white;
-        max-width: 300px;
-        min-width: 40vw;
-        height: 5px;
-        border-radius: 20px;
-        overflow: hidden;
-    }
+    input[type="range"] {
+  -webkit-appearance: none;
+  width: 100%;
+  min-width: 300px;
+  height: 5px;
+  background: red;
+  border-radius: 5px;
+  outline: none;
+  transition: 0.2s;
+}
 
-    .loader{
-        height: 100%;
-        width: 0;
-        border-radius: 20px;
-        background-color: red;
-    }
+/* Track (background) */
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 8px;
+  background: linear-gradient(to right, #ff6600 var(--progress), #ddd var(--progress));
+  border-radius: 5px;
+}
+
+/* Thumb (circle) */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 10px;
+  height: 10px;
+  background:#fff;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-top: -1px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: 0.2s;
+}
+
+
+
+    
 `
