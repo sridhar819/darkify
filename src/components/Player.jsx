@@ -9,7 +9,7 @@ const Player = () => {
 
     return (
         <PlayerContainer className='text-light'>
-            <div className='d-none d-md-flex'>
+            <div className='d-flex'>
                 <img width="50px" height="60%" src={track.image} alt="music" />
                 <div className='song-details'>
                     <p className='m-0 mt-2 p-0'><b>{track.name}</b></p>
