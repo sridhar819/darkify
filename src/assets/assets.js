@@ -43,6 +43,8 @@ import romanticanirudh from "./img/romantic-anirudh.jpg";
 import yuvan from "./img/yuvan.jpg";
 
 import aaruyire from "./songs/Aaruyire.mp3";
+import Mannurunda from './songs/Mannurunda.mp3'
+import Kaakithakappal from './songs/Kakidha-kappal.mp3'
 import naanpilaipeno from "./songs/Naan-Pizhaippeno.mp3";
 import kanavekanavae from "./songs/Kanave Kanave.mp3";
 import othasollala from "./songs/Otha-Sollaala.mp3";
@@ -199,6 +201,22 @@ export const songsData = [
     name: "Bodhai Kaname",
     image: oh_manapenne,
     file: bodhaikaname,
+    desc: "Put a smile on your face with these happy tunes",
+    duration: "4:22",
+  },
+  {
+    id: 8,
+    name: "Mannurunda mela",
+    image: "https://mir-s3-cdn-cf.behance.net/projects/404/9c787296924897.5eb9a0edb4e17.jpg",
+    file: Mannurunda,
+    desc: "Put a smile on your face with these happy tunes",
+    duration: "4:22",
+  },
+  {
+    id: 9,
+    name: "Kaakidha kappal",
+    image: "https://igimage.indiaglitz.com/tamil/gallery/movies/madras16614sedt45/madras-new-movie-stills_25914_43.jpg",
+    file: Kaakithakappal,
     desc: "Put a smile on your face with these happy tunes",
     duration: "4:22",
   },
