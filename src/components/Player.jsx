@@ -121,7 +121,8 @@ const PlayPause = styled.div`
     input[type="range"] {
   -webkit-appearance: none;
   width: 100%;
-  min-width: 300px;
+  min-width: 180px;
+  max-width: 300px;
   height: 5px;
   background: red;
   border-radius: 5px;
