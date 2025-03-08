@@ -10,7 +10,7 @@ const Player = () => {
         <PlayerContainer className='text-light'>
             <div className='d-flex'>
                 <img width="50px" height="60%" src={track.image} alt="music" />
-                <div className='song-details d-none d-md-flex'>
+                <div className='song-details d-none d-md-block'>
                     <p className='m-0 mt-2 p-0'><b>{track.name}</b></p>
                     <p>{track.desc.slice(0, 16) + "..."}</p>
                 </div>
