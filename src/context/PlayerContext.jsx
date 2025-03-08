@@ -13,7 +13,7 @@ const PlayerContextProvider = (props) => {
     const [track, setTrack] = useState(songsData[0]);
     const [playStatus, setPlayStatus] = useState(false);
     const [volume, setVolume] = useState(1);
-    
+
     const [time, setTime] = useState({
         currentTime: {
             second: 0,
@@ -40,6 +40,21 @@ const PlayerContextProvider = (props) => {
         await audioRef.current.play();
         setPlayStatus(true);
     }
+    const prev = async () => {
+        const currentIndex = songsData.findIndex(song => song === track);
+        const prevIndex = (currentIndex - 1 + songsData.length) % songsData.length; // Loop to last song if at the first
+        await setTrack(songsData[prevIndex]);
+        await audioRef.current.play();
+        setPlayStatus(true);
+    };
+
+    const next = async () => {
+        const currentIndex = songsData.findIndex(song => song === track);
+        const nextIndex = (currentIndex + 1) % songsData.length; // Loop back to first song if at the last
+        await setTrack(songsData[nextIndex]);
+        await audioRef.current.play();
+        setPlayStatus(true);
+    };
 
     const changeVolume = (e) => {
         const newVolume = e.target.value;
@@ -82,6 +97,8 @@ const PlayerContextProvider = (props) => {
         play,
         pause,
         playWithId,
+        next,
+        prev,
         volume,
         changeVolume
     }

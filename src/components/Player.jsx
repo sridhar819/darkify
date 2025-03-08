@@ -5,7 +5,7 @@ import { PlayerContext } from '../context/PlayerContext'
 
 const Player = () => {
 
-    const { seekBar, seekBg, playStatus, track, play, pause, time, volume, changeVolume } = useContext(PlayerContext);
+    const { seekBar, prev, seekBg, next, playStatus, track, play, pause, time, volume, changeVolume } = useContext(PlayerContext);
 
     return (
         <PlayerContainer className='text-light'>
@@ -19,12 +19,12 @@ const Player = () => {
             <PlayPause>
                 <div className="player">
                     <img src={assets.shuffle_icon} alt="" />
-                    <img src={assets.prev_icon} alt="" />
+                    <img onClick={prev} src={assets.prev_icon} alt="" />
                     {playStatus ?
                         <img onClick={pause} src={assets.pause_icon} alt="" /> :
                         <img onClick={play} src={assets.play_icon} alt="" />
                     }
-                    <img src={assets.next_icon} alt="" />
+                    <img onClick={next} src={assets.next_icon} alt="" />
                     <img src={assets.loop_icon} alt="" />
                 </div>
                 <div className="time-line">
